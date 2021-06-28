@@ -23,6 +23,10 @@
 				"groupName": "Basic",
 				"list": [
 					{
+						"path": "/skeleton",
+						"title": "skeleton 布局"
+					},
+					{
 						"path": "/layout",
 						"title": "Layout 布局"
 					},

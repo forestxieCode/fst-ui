@@ -11,6 +11,8 @@ import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import FooterNav from './components/footer-nav'
+import CunwUi from '../../cunw-ui/src/index'
+import '../../cunw-ui/src/styles/index.scss'
 import title from './i18n/title'
 
 import './demo-styles/index.scss'
@@ -19,6 +21,7 @@ import './assets/styles/fonts/style.css'
 import icon from './icon.json'
 
 Vue.use(ElementUI)
+Vue.use(CunwUi)
 Vue.use(VueRouter)
 
 Vue.component('demo-block', demoBlock)
