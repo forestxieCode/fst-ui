@@ -112,7 +112,6 @@ export const coerceTruthyValueToArray = function (val) {
   } else {
     return []
   }
-  
 }
 
 export const isIE = function () {
