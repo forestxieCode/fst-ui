@@ -3,14 +3,18 @@ const fs = require('fs')
 const path = require('path')
 const blacklist = ['theme-chalk']
 const componentPaths = [path.resolve(__dirname, '../src/components')]
-const themePath = path.resolve(__dirname, '../src/components', 'theme-chalk/src')
+const themePath = path.resolve(
+  __dirname,
+  '../src/components',
+  'theme-chalk/src'
+)
 const fileSuffix = '.scss'
 const indexFileName = 'index' + fileSuffix
 const outputIndexFilePath = path.resolve(themePath, indexFileName)
 
-  ; (function main() {
-    save(genCssCode(getAllComponentName()))
-  })()
+;(function main() {
+  save(genCssCode(getAllComponentName()))
+})()
 
 function getAllComponentName() {
   return componentPaths
