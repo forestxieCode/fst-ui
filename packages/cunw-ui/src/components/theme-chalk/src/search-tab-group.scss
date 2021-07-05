@@ -1,0 +1,95 @@
+@import 'mixins/mixins';
+@import 'common/var';
+
+@include b(search-tab-group) {
+  .search-box-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .tit {
+      font-weight: 400;
+      color: #555555;
+      font-size: 16px;
+    }
+    .search-item {
+      font-weight: 400;
+      color: #999999;
+      font-size: 14px;
+    }
+    .search-item:last-child {
+      color: #555555;
+    }
+    .unfold {
+      margin-right: 19px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      color: #787878;
+      .el-icon-d-arrow-right {
+        transition: all 0.3s;
+      }
+      .close {
+        transform: rotate(90deg);
+      }
+      .open {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  .search-warp {
+    margin-top: 16px;
+    background: #f3faff;
+    box-shadow: 0px 4px 23px 1px rgba(41, 41, 41, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    overflow: hidden;
+    transition: all 0.2s;
+    .search-container {
+      overflow: hidden;
+      padding: 0 17px;
+      display: flex;
+      width: 100%;
+      .searchTab {
+        flex-wrap: wrap;
+        height: 24px;
+        overflow: hidden;
+      }
+      &.unfold {
+        .searchTab {
+          justify-content: end;
+          height: auto;
+          overflow: auto;
+        }
+      }
+      .tit {
+        margin-top: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #787878;
+      }
+      .more {
+        margin-top: 10px;
+        font-weight: 400;
+        cursor: pointer;
+        white-space: nowrap;
+        color: #787878;
+        .el-icon-d-arrow-right {
+          transition: all 0.3s;
+        }
+        .close {
+          transform: rotate(90deg);
+        }
+        .open {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  .search-warp-close {
+    max-height: 0;
+  }
+  .search-warp-unfold {
+    max-height: 6667px;
+  }
+}

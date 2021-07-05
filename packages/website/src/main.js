@@ -4,15 +4,15 @@ import EntryApp from './app'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+import CunwUi from 'cunw-ui'
+import 'cunw-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
 import routes from './route'
 import hljs from 'highlight.js'
 import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import FooterNav from './components/footer-nav'
-import CunwUi from '../../cunw-ui/src/index'
-import '../../cunw-ui/src/styles/index.scss'
 import title from './i18n/title'
 
 import './demo-styles/index.scss'
@@ -23,6 +23,7 @@ import icon from './icon.json'
 Vue.use(ElementUI)
 Vue.use(CunwUi)
 Vue.use(VueRouter)
+
 
 Vue.component('demo-block', demoBlock)
 Vue.component('main-header', MainHeader)

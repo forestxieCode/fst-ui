@@ -279,12 +279,12 @@
             <slot>
               <img
                 src="../assets/images/element-logo.svg"
-                alt="element-logo"
+                alt="logo"
                 class="nav-logo"
               />
               <img
                 src="../assets/images/element-logo-small.svg"
-                alt="element-logo"
+                alt="logo"
                 class="nav-logo-small"
               />
             </slot>

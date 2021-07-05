@@ -1,18 +1,24 @@
-import Skeleton from './packages/skeleton/index.js'
-import locale from './locale'
+import { version } from '../package.json'
+import CwSearchTab from './components/search-tab'
+import CwSearchTabGroup from './components/search-tab-group'
+const components = [CwSearchTab, CwSearchTabGroup]
 
-const components = {
-  CwSkeleton: Skeleton
-}
-
-const install = function (Vue, options = {}) {
-  locale.use(options.locale)
-  locale.i18n(options.i18n)
-  Object.keys(components).forEach(key => {
-    Vue.component(key, components[key])
+const install = (Vue) => {
+  components.forEach((component) => {
+    Vue.use(component)
   })
-
-  // Vue.prototype.$message = Message;
+  applyOptions(Vue)
 }
 
-export default install
+function applyOptions() {
+  // app.prototype.$message = Message;
+}
+
+const cunwUi = {
+  version,
+  install
+}
+
+export { version, CwSearchTab, CwSearchTabGroup, install }
+
+export default cunwUi

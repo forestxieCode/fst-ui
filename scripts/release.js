@@ -14,75 +14,75 @@ const dryRun = (bin, args, opts = {}) =>
   console.log(chalk.blue(`[dryrun] ${bin} ${args.join(' ')}`), opts)
 const runIfNotDry = isDryRun ? dryRun : run
 
-;(async function main() {
-  const { yes } = await prompt({
-    type: 'confirm',
-    name: 'yes',
-    message: `Releasing v${targetVersion}. Confirm?`
-  })
+  ; (async function main() {
+    const { yes } = await prompt({
+      type: 'confirm',
+      name: 'yes',
+      message: `Releasing v${targetVersion}. Confirm?`
+    })
 
-  if (!yes) return
+    if (!yes) return
 
-  step('\nRunning element3 tests...')
-  await run('yarn', ['workspace', 'element3', 'test'])
+    step('\nRunning element3 tests...')
+    await run('yarn', ['workspace', 'element3', 'test'])
 
-  step('\nBuilding element3...')
-  await run('yarn', ['workspace', 'element3', 'build'])
+    step('\nBuilding element3...')
+    await run('yarn', ['workspace', 'element3', 'build'])
 
-  step('\nUpdate element3 version...')
-  await run('yarn', [
-    'workspace',
-    'element3',
-    'version',
-    '--new-version',
-    targetVersion,
-    '--no-git-tag-version'
-  ])
-
-  step('\nUpdating element3 cross dependencies...')
-  updatePackageVersion(targetVersion)
-
-  const { stdout } = await run('git', ['diff'], { stdio: 'pipe' })
-  if (stdout) {
-    step('\nCommitting changes...')
-    await runIfNotDry('git', ['add', '-A'])
-    await runIfNotDry('git', ['commit', '-m', `release: v${targetVersion}`])
-  } else {
-    console.log('No changes to commit.')
-  }
-
-  step('\nPublishing element3 package...')
-
-  await runIfNotDry(
-    'yarn',
-    [
-      'publish',
+    step('\nUpdate element3 version...')
+    await run('yarn', [
+      'workspace',
+      'element3',
+      'version',
       '--new-version',
       targetVersion,
-      '--registry',
-      'https://registry.npmjs.org',
-      '--access',
-      'public'
-    ],
-    {
-      cwd: path.resolve(__dirname, '../packages/element3'),
-      stdio: 'pipe'
+      '--no-git-tag-version'
+    ])
+
+    step('\nUpdating element3 cross dependencies...')
+    updatePackageVersion(targetVersion)
+
+    const { stdout } = await run('git', ['diff'], { stdio: 'pipe' })
+    if (stdout) {
+      step('\nCommitting changes...')
+      await runIfNotDry('git', ['add', '-A'])
+      await runIfNotDry('git', ['commit', '-m', `release: v${targetVersion}`])
+    } else {
+      console.log('No changes to commit.')
     }
-  )
 
-  step('\nPushing to GitHub...')
-  await runIfNotDry('git', ['tag', `v${targetVersion}`])
-  await runIfNotDry('git', [
-    'push',
-    'origin',
-    `refs/tags/v${targetVersion}`,
-    '--no-verify'
-  ])
-  await runIfNotDry('git', ['push', 'origin', 'master', '--no-verify'])
+    step('\nPublishing element3 package...')
 
-  console.log()
-  console.log(chalk.green(`Successfully published v${targetVersion}`))
-})()
+    await runIfNotDry(
+      'yarn',
+      [
+        'publish',
+        '--new-version',
+        targetVersion,
+        '--registry',
+        'https://registry.npmjs.org',
+        '--access',
+        'public'
+      ],
+      {
+        cwd: path.resolve(__dirname, '../packages/element3'),
+        stdio: 'pipe'
+      }
+    )
+
+    step('\nPushing to GitHub...')
+    await runIfNotDry('git', ['tag', `v${targetVersion}`])
+    await runIfNotDry('git', [
+      'push',
+      'origin',
+      `refs/tags/v${targetVersion}`,
+      '--no-verify'
+    ])
+    await runIfNotDry('git', ['push', 'origin', 'master', '--no-verify'])
+
+    console.log()
+    console.log(chalk.green(`Successfully published v${targetVersion}`))
+  })()
 
 function updatePackageVersion(version) {
   getPackagePath().forEach((pkgPath) => {

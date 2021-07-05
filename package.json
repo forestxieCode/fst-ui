@@ -15,7 +15,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev#cunw-ui": "yarn workspace cunw-ui dev",
     "dev#website": "yarn workspace website serve",
-    "dev": "node scripts/runCmd.js \"yarn dev#website\""
+    "dev": "node scripts/runCmd.js \"yarn dev#cunw-ui\" \"yarn dev#website\""
   },
   "license": "MIT",
   "gitHooks": {

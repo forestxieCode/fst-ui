@@ -5,7 +5,7 @@ A Vue.js 2.0 UI Toolkit for Web.
 ## Install
 
 ```shell
-npm install @cunw/cunw-ui -S
+npm install @cunw/cunw -S
 ```
 
 ## Quick Start
@@ -14,8 +14,8 @@ npm install @cunw/cunw-ui -S
 import { createApp } from 'vue'
 import App from './App.vue'
 // import style
-import '@cunw/cunw-ui/lib/cunw-ui.css'
-import cunwUi from '@cunw/cunw-ui'
+import '@cunw/cunw/lib/cunw.css'
+import cunwUi from '@cunw/cunw'
 
 // global import
 Vue.use(cunwUi)

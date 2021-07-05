@@ -1,0 +1,23 @@
+@import 'mixins/mixins';
+@import 'common/var';
+
+@include b(search-tab) {
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  color: $--color-text-primary;
+  & > div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px 8px;
+    margin: 0 6px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+   @include e(active) {
+    color: #fff;
+    background: #007ae1;
+  }
+}
