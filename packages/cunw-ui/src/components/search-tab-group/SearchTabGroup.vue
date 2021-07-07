@@ -6,11 +6,11 @@
           class="search-item"
           v-for="(refItme, indx) in allChildRef"
           :key="indx"
-          >{{ refItme.name }} {{ indx === allChildRef.length - 1 ? "" : ">" }}
+          >{{ refItme.name }} {{ indx === allChildRef.length - 1 ? '' : '>' }}
         </span>
       </div>
       <span class="unfold" @click="unfold = !unfold"
-        >{{ unfold ? "收起" : "展开" }}
+        >{{ unfold ? '收起' : '展开' }}
         <i :class="unfold ? 'close' : 'open'" class="el-icon-d-arrow-right"></i
       ></span>
     </div>
@@ -40,6 +40,7 @@
             :list="value"
             :prop="searchOption[key].prop || { name: 'name', id: 'id' }"
             ref="searchTab"
+            class="searchTab"
             v-model="copySearchData[key]"
             @change="getSearchTabData"
           ></cw-search-tab>
@@ -48,7 +49,7 @@
           style="display: none"
           class="more"
           @click="searchOption[key].unfold = !searchOption[key].unfold"
-          >{{ searchOption[key].unfold ? "收起" : "更多" }}
+          >{{ searchOption[key].unfold ? '收起' : '更多' }}
           <i
             :class="searchOption[key].unfold ? 'close' : 'open'"
             class="el-icon-d-arrow-right"
@@ -60,38 +61,27 @@
 </template>
 <script>
 export default {
-  name: "SearchTabGroup",
+  name: 'CwSearchTabGroup',
   props: {
     // 配置选项
     searchOption: {
       type: Object,
       require: true,
-      default: () => ({}),
+      default: () => ({})
     },
     // axios
     request: {
-      type: Object,
-      default: () => ({}),
-    },
-    // 显示的数据
-    listObj: {
-      type: Object,
-      require: true,
-      default: () => ({}),
-    },
-    // 初始化搜索的条件数据
-    initSearchData: {
-      type: Object,
-      default: () => ({}),
+      type: Object | Function,
+      default: () => ({})
     },
     // 展开的配置
     unfoldOption: {
       type: Object,
       default: () => ({
-        name: "中考专区",
-        unfold: false,
-      }),
-    },
+        name: '中考专区',
+        unfold: false
+      })
+    }
   },
   data() {
     return {
@@ -99,22 +89,22 @@ export default {
       copyNewListObj: {},
       copySearchData: {},
       unfold: true,
-      allChildRef: [],
+      allChildRef: []
     }
   },
   watch: {
-    listObj: {
+    'searchOption.data': {
       handler: function () {
         this.init()
       },
-      deep: true,
+      deep: true
     },
-    initSearchData: {
+    'searchOption.defaultValue': {
       handler: function () {
         this.init()
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   mounted() {
     this.init()
@@ -135,27 +125,32 @@ export default {
           0
         )
         if (searChildNodeSum >= width) {
-          moreNode.style.display = "block"
+          moreNode.style.display = 'block'
         } else {
-          moreNode.style.display = "none"
+          moreNode.style.display = 'none'
         }
-        searchNode.style.width = width + "px"
+        searchNode.style.width = width + 'px'
       })
     },
     initSearchDataHandle() {
       this.copySearchData = {}
-      const tem = JSON.parse(JSON.stringify(this.initSearchData) || "{}")
       // 过滤所需要的值
       Object.keys(this.searchOption).forEach((key) => {
-        this.$set(this.copySearchData, [key], tem[key])
+        this.$set(
+          this.copySearchData,
+          [key],
+          this.searchOption[key].defaultValue || null
+        )
       })
     },
     initSearchTabListData() {
-      // 深拷贝
-      this.copyNewListObj = JSON.parse(JSON.stringify(this.listObj) || "{}")
-      // 给每个属性添加一个是否展开属性
+      // 给每个属性添加一个是否展开属性 并深拷贝
+      this.copyNewListObj = {}
       Object.keys(this.searchOption).forEach((key) => {
-        this.$set(this.searchOption[key], "unfold", false)
+        this.copyNewListObj[key] = JSON.parse(
+          JSON.stringify(this.searchOption[key].data || [])
+        )
+        this.$set(this.searchOption[key], 'unfold', false)
       })
       // 获取接口数据
       this.getSearchTabData()
@@ -170,7 +165,7 @@ export default {
       })
     },
     // 动态的获取接口数据
-    getSearchTabData(index) {
+    async getSearchTabData(index) {
       const arr = Object.keys(this.searchOption)
       const commentFun = (index, key, propKey) => {
         if (this.copyNewListObj[key].length) {
@@ -179,8 +174,12 @@ export default {
             [key],
             this.copyNewListObj[key][0][propKey]
           )
-          if (index === undefined && this.initSearchData[key]) {
-            this.$set(this.copySearchData, [key], this.initSearchData[key])
+          if (index === undefined && this.searchOption[key].defaultValue) {
+            this.$set(
+              this.copySearchData,
+              [key],
+              this.searchOption[key].defaultValue
+            )
           }
         }
       }
@@ -192,10 +191,10 @@ export default {
         const item = this.searchOption[key]
         const propKey =
           (this.searchOption[key].prop && this.searchOption[key].prop.id) ||
-          "id"
+          'id'
         const propName =
           (this.searchOption[key].prop && this.searchOption[key].prop.name) ||
-          "name"
+          'name'
         const autoAddAll = this.searchOption[key].autoAddAll || false
         // 判断 是否需要联动
         if (index !== undefined) {
@@ -204,39 +203,37 @@ export default {
           // if (this.copyNewListObj[key][0][key] === null) break;
         }
         if (item.url) {
-          this.request({
+          const { data } = await this.request({
             url: item.url,
-            methods: "get",
-            params: { [preKey]: this.copySearchData[preKey] },
-          }).then((res) => {
-            const { data } = res
-            this.copyNewListObj[key] = data || []
-            // 自动添加全部选项
-            if (autoAddAll)
-              this.copyNewListObj[key].unshift({
-                [propKey]: null,
-                [propName]: "全部",
-              })
-            commentFun(index, key, propKey)
+            methods: 'get',
+            params: { [preKey]: this.copySearchData[preKey] }
           })
+          this.copyNewListObj[key] = data.data || []
+          // 自动添加全部选项
+          if (autoAddAll)
+            this.copyNewListObj[key].unshift({
+              [propKey]: null,
+              [propName]: '全部'
+            })
+          commentFun(index, key, propKey)
         } else {
           // 非接口 初始化自动添加全部选项
           if (index === undefined && !item.url) {
             if (autoAddAll)
               this.copyNewListObj[key].unshift({
                 [propKey]: null,
-                [propName]: "全部",
+                [propName]: '全部'
               })
           }
           commentFun(index, key, propKey)
         }
       }
       this.loading = false
-      this.$emit("change", this.copySearchData)
+      this.$emit('change', this.copySearchData)
       this.$nextTick(() => {
         this.initSearchWidth()
       })
-    },
-  },
+    }
+  }
 }
 </script>

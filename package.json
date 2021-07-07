@@ -7,6 +7,7 @@
     "bootstrap": "yarn",
     "build": "yarn workspace cunw-ui build && yarn workspace website build",
     "build#website": "yarn workspace website build",
+    "build#theme": "yarn workspace cunw-ui build:theme",
     "test": "yarn workspace cunw-ui test",
     "test:coverage": "yarn workspace cunw-ui test:coverage",
     "lint": "eslint --ext --fix .js --ext .vue --ext .ts packages/cunw-ui/packages/** packages/*/src/** --no-error-on-unmatched-pattern",
@@ -23,7 +24,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": [
+    "*.{js}": [
       "eslint",
       "prettier --write"
     ]

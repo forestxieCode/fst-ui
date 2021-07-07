@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import EntryApp from './app'
-
 import VueRouter from 'vue-router'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import CunwUi from 'cunw-ui'
+import CunwUI from 'cunw-ui'
 import 'cunw-ui/lib/theme-chalk/index.css'
-import 'element-ui/lib/theme-chalk/index.css'
+
+import axios from 'axios'
 import routes from './route'
 import hljs from 'highlight.js'
 import demoBlock from './components/demo-block'
@@ -21,7 +22,7 @@ import './assets/styles/fonts/style.css'
 import icon from './icon.json'
 
 Vue.use(ElementUI)
-Vue.use(CunwUi)
+Vue.use(CunwUI)
 Vue.use(VueRouter)
 
 
@@ -46,7 +47,7 @@ Vue.mixin({
 })
 
 Vue.prototype.$icon = icon // Icon 列表页用
-
+Vue.prototype.$axios = axios // 请求
 const router = new VueRouter({
 	mode: 'hash',
 	routes,

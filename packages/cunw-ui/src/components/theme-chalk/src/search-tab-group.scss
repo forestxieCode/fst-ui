@@ -2,6 +2,12 @@
 @import 'common/var';
 
 @include b(search-tab-group) {
+  .flex {
+    display: flex;
+  }
+  .flex-between {
+    justify-content: space-between;
+  }
   .search-box-info {
     margin-top: 20px;
     display: flex;
@@ -49,6 +55,7 @@
       padding: 0 17px;
       display: flex;
       width: 100%;
+      box-sizing: border-box;
       .searchTab {
         flex-wrap: wrap;
         height: 24px;

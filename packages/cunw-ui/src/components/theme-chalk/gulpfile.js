@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 'use strict'
 
 const { series, src, dest } = require('gulp')

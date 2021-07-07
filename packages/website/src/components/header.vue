@@ -278,12 +278,12 @@
             <!-- logo -->
             <slot>
               <img
-                src="../assets/images/element-logo.svg"
+                src="../assets/images/logo.svg"
                 alt="logo"
                 class="nav-logo"
               />
               <img
-                src="../assets/images/element-logo-small.svg"
+                src="../assets/images/logo.svg"
                 alt="logo"
                 class="nav-logo-small"
               />

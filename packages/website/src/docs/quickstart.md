@@ -23,7 +23,7 @@ import CunwUi from 'cunw-ui';
 import 'cunw-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
-Vue.use(ElementUI);
+Vue.use(ElementUi);
 Vue.use(CunwUi);
 
 new Vue({
@@ -65,14 +65,14 @@ npm install babel-plugin-component -D
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'element-ui';
+import { CwSearchTab, CwSearchTabGroup } from 'cunw-ui';
 import App from './App.vue';
 
-Vue.component(Button.name, Button);
-Vue.component(Select.name, Select);
+Vue.component(CwSearchTab.name, CwSearchTab);
+Vue.component(CwSearchTabGroup.name, CwSearchTabGroup);
 /* 或写为
- * Vue.use(Button)
- * Vue.use(Select)
+ * Vue.use(CwSearchTab)
+ * Vue.use(CwSearchTabGroup)
  */
 
 new Vue({
@@ -86,11 +86,12 @@ new Vue({
 ```javascript
 import Vue from 'vue';
 import {
- 
-} from 'element-ui';
+ CwSearchTab,
+ CwSearchTabGroup
+} from 'cunw-ui';
 
-Vue.use(Pagination);
-Vue.use(Dialog);
+Vue.use(CwSearchTab);
+Vue.use(CwSearchTabGroup);
 ```
 
 
