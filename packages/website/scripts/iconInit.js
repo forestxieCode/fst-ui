@@ -4,7 +4,7 @@ const postcss = require('postcss')
 const fs = require('fs')
 const path = require('path')
 const fontFile = fs.readFileSync(
-	require.resolve('element3/lib/theme-chalk/icon.css'),
+	require.resolve('element/lib/theme-chalk/icon.css'),
 	'utf8'
 )
 

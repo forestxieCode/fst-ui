@@ -1,7 +1,24 @@
 // vue.config.js
 const path = require('path')
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+
+const plugins = process.env.BABEL_ENV === 'development'? []:[
+	new FileManagerPlugin({ // 初始化 filemanager-webpack-plugin 插件压缩实例
+		onEnd: {
+			delete: [ // 首先需要删除项目根目录下的dist.zip
+				'./dist/dist.zip'
+			],
+			archive: [ // 然后我们选择dist文件夹将之打包成dist.zip并放在根目录
+				{ source: './dist', destination: './dist/dist.zip' }
+			]
+		}
+	})
+]
 
 module.exports = {
+	configureWebpack: {
+		plugins
+	},
 	devServer: {
 		port: 8088,
 	},

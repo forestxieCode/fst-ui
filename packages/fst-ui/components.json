@@ -1,0 +1,4 @@
+{
+  "search-tab": "./src/components/search-tab/index.js",
+  "search-tab-group": "./src/components/search-tab-group/index.js"
+}

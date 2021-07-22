@@ -288,7 +288,7 @@
 			<div class="banner-desc">
 				<h1>网站快速成型工具</h1>
 				<p>
-					cunw-ui，一套为开发者、设计师和产品经理准备的基于 element-ui二次开发
+					fst-ui，一套为开发者、设计师和产品经理准备的基于 element-ui二次开发
 					的桌面端组件库
 				</p>
 			</div>

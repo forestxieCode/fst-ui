@@ -1,15 +1,15 @@
 ## 快速上手
 
-本节将介绍如何在项目中使用 Cunw。
+本节将介绍如何在项目中使用 Fst。
 
-### 使用 @cunw/cunw-cli
+### 使用 @fst/fst-cli
 
-我们为新版的 [@cunw/cunw-cli](https://www.npmjs.com/package/@cunw/cunw-cli) 准备了相应的 模板插件，你可以用它们快速地搭建一个基于 cunw-ui 的项目。
+我们为新版的 [@fst/fst-cli](https://www.npmjs.com/package/@fst/fst-cli) 准备了相应的 模板插件，你可以用它们快速地搭建一个基于 fst-ui 的项目。
 
 
-### 引入 Cunw
+### 引入 Fst
 
-你可以引入整个 Cunw，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Cunw。
+你可以引入整个 Fst，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Fst。
 
 #### 完整引入
 
@@ -19,12 +19,12 @@
 import Vue from 'vue';
 import ElementUi from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import CunwUi from 'cunw-ui';
-import 'cunw-ui/lib/theme-chalk/index.css';
+import FstUi from 'fst-ui';
+import 'fst-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
 Vue.use(ElementUi);
-Vue.use(CunwUi);
+Vue.use(FstUi);
 
 new Vue({
   el: '#app',
@@ -32,7 +32,7 @@ new Vue({
 });
 ```
 
-以上代码便完成了 Cunw 的引入。需要注意的是，Cunw 是基于ElementUi的，需要在之后引入该组件库。
+以上代码便完成了 Fst 的引入。需要注意的是，Fst 是基于ElementUi的，需要在之后引入该组件库。
 
 #### 按需引入
 
@@ -53,7 +53,7 @@ npm install babel-plugin-component -D
     [
       "component",
       {
-        "libraryName": "cunw-ui",
+        "libraryName": "fst-ui",
         "styleLibraryName": "theme-chalk"
       }
     ]
@@ -65,7 +65,7 @@ npm install babel-plugin-component -D
 
 ```javascript
 import Vue from 'vue';
-import { CwSearchTab, CwSearchTabGroup } from 'cunw-ui';
+import { CwSearchTab, CwSearchTabGroup } from 'fst-ui';
 import App from './App.vue';
 
 Vue.component(CwSearchTab.name, CwSearchTab);
@@ -88,7 +88,7 @@ import Vue from 'vue';
 import {
  CwSearchTab,
  CwSearchTabGroup
-} from 'cunw-ui';
+} from 'fst-ui';
 
 Vue.use(CwSearchTab);
 Vue.use(CwSearchTabGroup);
@@ -97,6 +97,6 @@ Vue.use(CwSearchTabGroup);
 
 ### 开始使用
 
-至此，一个基于 Vue 和 Cunw 的开发环境已经搭建完毕，现在就可以编写代码了。各个组件的使用方法请参阅它们各自的文档。
+至此，一个基于 Vue 和 Fst 的开发环境已经搭建完毕，现在就可以编写代码了。各个组件的使用方法请参阅它们各自的文档。
 
 

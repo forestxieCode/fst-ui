@@ -23,23 +23,24 @@ const runIfNotDry = isDryRun ? dryRun : run
 
     if (!yes) return
 
-    step('\nRunning element3 tests...')
-    await run('yarn', ['workspace', 'element3', 'test'])
+    // step('\nRunning fst-ui tests...')
+    // await run('yarn', ['workspace', 'fst-ui', 'test'])
 
-    step('\nBuilding element3...')
-    await run('yarn', ['workspace', 'element3', 'build'])
+    step('\nBuilding fst-ui...')
+    await run('yarn', ['workspace', 'fst-ui', 'build'])
 
-    step('\nUpdate element3 version...')
+    step('\nUpdate fst-ui version...')
     await run('yarn', [
       'workspace',
-      'element3',
+      'fst-ui',
       'version',
       '--new-version',
       targetVersion,
       '--no-git-tag-version'
     ])
 
-    step('\nUpdating element3 cross dependencies...')
+    step('\nUpdating fst-ui cross dependencies...')
+
     updatePackageVersion(targetVersion)
 
     const { stdout } = await run('git', ['diff'], { stdio: 'pipe' })
@@ -51,7 +52,7 @@ const runIfNotDry = isDryRun ? dryRun : run
       console.log('No changes to commit.')
     }
 
-    step('\nPublishing element3 package...')
+    step('\nPublishing fst-ui package...')
 
     await runIfNotDry(
       'yarn',
@@ -65,7 +66,7 @@ const runIfNotDry = isDryRun ? dryRun : run
         'public'
       ],
       {
-        cwd: path.resolve(__dirname, '../packages/element3'),
+        cwd: path.resolve(__dirname, '../packages/fst-ui'),
         stdio: 'pipe'
       }
     )
@@ -108,7 +109,7 @@ function updateDeps(packageJson, depType, version) {
   if (!dependencies) return
 
   Object.keys(dependencies).forEach((key) => {
-    if (key === 'element3') {
+    if (key === 'fst-ui') {
       dependencies[key] = version
     }
   })

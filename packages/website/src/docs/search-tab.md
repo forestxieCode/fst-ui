@@ -1,4 +1,5 @@
 ## SearchTab 搜索框
+开发者：（谢森林）<br/>
 用于页面的数据查询，以及表单提交，只需传递匹配的数据，在操作之后会通过事件拿到所操作的值。
 
 ### 基础用法
@@ -36,7 +37,7 @@
 :::
 
 ### SearchTabGroup用法
-当需要多个`search-tab`时，可以使用`search-tab-group`多行显示
+当需要多个`search-tab`时，可以使用`search-tab-group`多行显示 
 :::demo 使用`search-tab-group`多行显示
 ```html
 <template>
@@ -114,10 +115,10 @@
 :::
 
 
-### 展示已选中的值
+### 展示已选中的名字
 展示已选择的名字
 
-:::demo 可使用`unfoldOption`属性配置展示的面包屑
+:::demo 可使用`unfoldOption`属性进行配置
 ```html
 <template>
   <cw-search-tab-group :searchOption="searchOption" :unfoldOption="unfoldOption" @change="changeHandle"></cw-search-tab-group>
@@ -256,7 +257,7 @@
 | url     | 请求的接口地址与data属性互斥            | string  | —                                          | —      |
 | require | 必选标记                               | blooen  | false/true                                 | false  |
 | autoAddAll | 是否需要添加全部选项                 | blooen | false/true                                  | false  |
-| defaultValue | 默认值                            | number   | -                                         | —     |
+| defaultValue | 默认值                            | number  | —                                         | —     |
 | prop    | 自定义数据格式                          | object  | —                          | {id:'id', name:'name'} |
 
 

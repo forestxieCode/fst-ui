@@ -4,8 +4,8 @@ import VueRouter from 'vue-router'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import CunwUI from 'cunw-ui'
-import 'cunw-ui/lib/theme-chalk/index.css'
+import FstUI from 'fst-ui'
+import 'fst-ui/lib/theme-chalk/index.css'
 
 import axios from 'axios'
 import routes from './route'
@@ -22,7 +22,7 @@ import './assets/styles/fonts/style.css'
 import icon from './icon.json'
 
 Vue.use(ElementUI)
-Vue.use(CunwUI)
+Vue.use(FstUI)
 Vue.use(VueRouter)
 
 
