@@ -1,5 +1,5 @@
 <template>
-  <div class="cw-search-tab-group">
+  <div class="fst-search-tab-group">
     <div v-if="unfoldOption.unfold" class="search-box-info">
       <div class="left">
         {{ unfoldOption.name }}：<span
@@ -35,7 +35,7 @@
             >
             {{ searchOption[key].name }}：</span
           >
-          <cw-search-tab
+          <fst-search-tab
             :rowNum="index"
             :list="value"
             :prop="searchOption[key].prop || { name: 'name', id: 'id' }"
@@ -43,7 +43,7 @@
             class="searchTab"
             v-model="copySearchData[key]"
             @change="getSearchTabData"
-          ></cw-search-tab>
+          ></fst-search-tab>
         </div>
         <span
           style="display: none"
@@ -61,7 +61,7 @@
 </template>
 <script>
 export default {
-  name: 'CwSearchTabGroup',
+  name: 'FstSearchTabGroup',
   props: {
     // 配置选项
     searchOption: {

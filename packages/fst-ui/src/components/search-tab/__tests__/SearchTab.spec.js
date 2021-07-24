@@ -11,6 +11,6 @@ describe('SearchTab.vue', () => {
         ]
       }
     })
-    expect(wrapper.find('.cw-search-tab div').text()).toEqual('张三')
+    expect(wrapper.find('.fst-search-tab div').text()).toEqual('张三')
   })
 })

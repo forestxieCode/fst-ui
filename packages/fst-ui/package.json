@@ -1,7 +1,7 @@
 {
   "name": "fst-ui",
   "version": "1.0.6",
-  "description": "公司组件库",
+  "description": "企业组件库",
   "author": "1397798719@qq.com",
   "license": "ISC",
   "main": "./dist/fst-ui.umd.js",

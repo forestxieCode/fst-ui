@@ -37,12 +37,12 @@ export default ${ComponentName}`
       `${ComponentName}.vue`
     ),
     content: `<template>
-  <div class="cw-${componentname}"></div>
+  <div class="fst-${componentname}"></div>
 </template>
 
 <script>
 export default {
-  name: 'Cw${ComponentName}'
+  name: 'Fst${ComponentName}'
 };
 </script>`
   },

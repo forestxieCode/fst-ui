@@ -1,10 +1,10 @@
 <template>
-  <div class="cw-search-tab">
+  <div class="fst-search-tab">
     <div
       v-for="(d, k) of list"
       @click="change(d, k)"
       :key="k"
-      :class="k === index ? 'cw-search-tab__active' : ''"
+      :class="k === index ? 'fst-search-tab__active' : ''"
     >
       {{ d[prop.name] }}
     </div>

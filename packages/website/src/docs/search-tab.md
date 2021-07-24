@@ -9,7 +9,7 @@
 <template>
   <div class="demo-search-tab-box">
     <span class="demo-search-tab-title">区域：</span>
-    <cw-search-tab v-model="searchValue" :list="data"></cw-search-tab>
+    <fst-search-tab v-model="searchValue" :list="data"></fst-search-tab>
   </div>
 </template>
 <script>
@@ -33,7 +33,7 @@
 :::
 
 :::tip
- 在一般搜索页面存在多个条件查询。如果每一个就是`cw-search-tab`，那么代码会显得有点臃肿，所有在这基础上再封装一层`cw-search-tab-group`,支持多条件查询。
+ 在一般搜索页面存在多个条件查询。如果每一个就是`fst-search-tab`，那么代码会显得有点臃肿，所有在这基础上再封装一层`fst-search-tab-group`,支持多条件查询。
 :::
 
 ### SearchTabGroup用法
@@ -41,7 +41,7 @@
 :::demo 使用`search-tab-group`多行显示
 ```html
 <template>
-  <cw-search-tab-group :searchOption="searchOption" @change="changeHandle"></cw-search-tab-group>
+  <fst-search-tab-group :searchOption="searchOption" @change="changeHandle"></fst-search-tab-group>
 </template>
 <script>
   export default {
@@ -121,7 +121,7 @@
 :::demo 可使用`unfoldOption`属性进行配置
 ```html
 <template>
-  <cw-search-tab-group :searchOption="searchOption" :unfoldOption="unfoldOption" @change="changeHandle"></cw-search-tab-group>
+  <fst-search-tab-group :searchOption="searchOption" :unfoldOption="unfoldOption" @change="changeHandle"></fst-search-tab-group>
 </template>
 <script>
   export default {
@@ -200,7 +200,7 @@
 :::demo 添加url地址和linkage属性
 ```html
 <template>
-  <cw-search-tab-group :searchOption="searchOption" :request="request" @change="changeHandle"></cw-search-tab-group>
+  <fst-search-tab-group :searchOption="searchOption" :request="request" @change="changeHandle"></fst-search-tab-group>
 </template>
 <script>
   export default {
