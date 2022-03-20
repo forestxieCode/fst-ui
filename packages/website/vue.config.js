@@ -18,6 +18,7 @@ const plugins = process.env.BABEL_ENV === 'development'? []:[
 module.exports = {
 	publicPath: './fst-ui',
 	outputDir: 'dist/fst-ui',
+	indexPath: '../index.html',
 	configureWebpack: {
 		plugins
 	},
