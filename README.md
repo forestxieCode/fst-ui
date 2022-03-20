@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/forestxieCode/fst-ui/blob/main/packages/website/src/assets/images/logo.svg">
+  <img src="https://github.com/forestxieCode/fst-ui/blob/main/packages/website/src/assets/images/logo_03.png">
 </p>
 
 <p align="center">
   <a>
-    <img src="https://travis-ci.org/ElemeFE/element.svg?branch=master">
+    <img src="https://app.travis-ci.com/forestxieCode/fst-ui.svg?branch=main">
   </a>
 </p>
 
