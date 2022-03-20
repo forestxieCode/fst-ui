@@ -8,7 +8,7 @@
     "dev": "node scripts/runCmd.js \"yarn dev#fst-ui\" \"yarn dev#website\"",
     "dev#fst-ui": "yarn workspace fst-ui dev",
     "dev#website": "yarn workspace website serve",
-    "build": "yarn workspace fst-ui build && yarn workspace website build",
+    "build": "yarn workspace fst-ui build:theme && yarn workspace fst-ui build && yarn workspace website build",
     "build#website": "yarn workspace website build",
     "build#theme": "yarn workspace fst-ui build:theme",
     "test": "yarn workspace fst-ui test",
