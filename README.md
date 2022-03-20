@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://www.cunw.com.cn/template/xinyun/skin/images/logo_03.png">
+  <img src="https://github.com/forestxieCode/fst-ui/blob/main/packages/website/src/assets/images/logo.svg">
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
 fst-ui will stay with Vue 2.x 
 
 ## Links
--  [文档地址](https://github.com/forestxieCode/fst-ui)
+-  [文档地址](https://forestxiecode.github.io/fst-ui/)
 
 ## Install
 ```shell
