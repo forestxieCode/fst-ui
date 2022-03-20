@@ -13,7 +13,7 @@
 fst-ui will stay with Vue 2.x 
 
 ## Links
--  [文档地址](http://114.116.142.157:8989/#/)
+-  [文档地址](https://github.com/forestxieCode/fst-ui)
 
 ## Install
 ```shell
