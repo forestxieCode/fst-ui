@@ -43,5 +43,5 @@ Vue.component(CwSearchTabGroup.name, CwSearchTabGroup)
 For more information, please refer to [Quick Start](http://114.116.142.157:8989/#/component/quickstart) in our documentation.
 
 ## Browser Support
-Modern browsers and Internet Explorer 10+.
+Modern browsers and Internet Explorer 10+
 
