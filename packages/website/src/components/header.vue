@@ -83,6 +83,9 @@
     }
   }
 
+  .nav-logo {
+    margin-top: 6px;
+  }
   .nav-logo,
   .nav-logo-small {
     vertical-align: sub;
