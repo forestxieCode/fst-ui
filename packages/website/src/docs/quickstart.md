@@ -60,14 +60,14 @@ npm install babel-plugin-component -D
 
 ```javascript
 import Vue from 'vue';
-import { CwSearchTab, CwSearchTabGroup } from 'fst-ui';
+import { FstSearchTab, FstSearchTabGroup } from 'fst-ui';
 import App from './App.vue';
 
-Vue.component(CwSearchTab.name, CwSearchTab);
-Vue.component(CwSearchTabGroup.name, CwSearchTabGroup);
+Vue.component(FstSearchTab.name, FstSearchTab);
+Vue.component(FstSearchTabGroup.name, FstSearchTabGroup);
 /* 或写为
- * Vue.use(CwSearchTab)
- * Vue.use(CwSearchTabGroup)
+ * Vue.use(FstSearchTab)
+ * Vue.use(FstSearchTabGroup)
  */
 
 new Vue({
@@ -81,12 +81,12 @@ new Vue({
 ```javascript
 import Vue from 'vue';
 import {
- CwSearchTab,
- CwSearchTabGroup
+ FstSearchTab,
+ FstSearchTabGroup
 } from 'fst-ui';
 
-Vue.use(CwSearchTab);
-Vue.use(CwSearchTabGroup);
+Vue.use(FstSearchTab);
+Vue.use(FstSearchTabGroup);
 ```
 
 

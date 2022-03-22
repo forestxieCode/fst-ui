@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="https://i.postimg.cc/Gh5pLZ3G/logo-03.png">
+  <a href="https://forestxiecode.github.io/fst-ui/#/">
+    <img src="https://i.postimg.cc/Gh5pLZ3G/logo-03.png">
+  </a>
 </p>
 
 <p align="center">
@@ -32,12 +34,12 @@ Vue.use(Fst)
 
 // or
 import { 
-  CwSearchTab, 
-  CwSearchTabGroup 
+  FstSearchTab, 
+  FstSearchTabGroup 
 } from 'fst-ui';
 
-Vue.component(CwSearchTab.name, CwSearchTab)
-Vue.component(CwSearchTabGroup.name, CwSearchTabGroup)
+Vue.component(FstSearchTab.name, FstSearchTab)
+Vue.component(FstSearchTabGroup.name, FstSearchTabGroup)
 ```
 For more information, please refer to [Quick Start](http://114.116.142.157:8989/#/component/quickstart) in our documentation.
 

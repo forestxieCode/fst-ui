@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'CwSearchTab',
+  name: 'FstSearchTab',
   props: {
     // 展示在第几行
     rowNum: {
