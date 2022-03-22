@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/forestxieCode/fst-ui/blob/main/packages/website/src/assets/images/logo_03.png">
+  <img src="https://i.postimg.cc/Gh5pLZ3G/logo-03.png">
 </p>
 
 <p align="center">
@@ -7,7 +7,6 @@
     <img src="https://app.travis-ci.com/forestxieCode/fst-ui.svg?branch=main">
   </a>
 </p>
-
 > A Vue.js 2.0 UI Toolkit for Web.
 
 fst-ui will stay with Vue 2.x 
