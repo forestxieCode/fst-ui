@@ -6,9 +6,11 @@ import scss from 'rollup-plugin-scss'
 import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import vue from 'rollup-plugin-vue'
-import babel from '@rollup/plugin-babel'
+import babel from 'rollup-plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
+import Components from 'unplugin-vue-components/rollup'
+import { ElementUiResolver } from 'unplugin-vue-components/resolvers'
 
 const name = 'fst'
 const createBanner = () => {
@@ -20,7 +22,7 @@ const createBanner = () => {
 }
 const config = {
   input: 'src/index.js',
-  external: ['vue'],
+  external: ['vue', 'lodash', 'async-validator'],
   output: {
     name,
     sourcemap: false,
@@ -28,11 +30,21 @@ const config = {
     exports: 'named',
     externalLiveBindings: false,
     globals: {
-      vue: 'Vue'
+      vue: 'Vue',
+      lodash: 'lodash',
+      'async-validator': 'async-validator',
+      'element-ui': 'element-ui'
     }
   },
   plugins: [
     peerDepsExternal(),
+    Components({
+      resolvers: [
+        ElementUiResolver({
+          importStyle: 'css'
+        })
+      ]
+    }),
     resolve({
       extensions: ['.vue', '.jsx', '.js']
     }),
@@ -41,9 +53,7 @@ const config = {
       compileTemplate: true
     }),
     babel({
-      exclude: 'node_modules/**',
-      extensions: ['.js', '.jsx', '.vue'],
-      babelHelpers: 'bundled'
+      runtimeHelpers: true
     }),
     commonjs(),
     terser(),

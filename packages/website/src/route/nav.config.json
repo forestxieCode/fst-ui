@@ -20,16 +20,8 @@
 				"title": "search-tab 搜索"
 			},
 			{
-				"path": "/pdf-preview",
-				"title": "pdf-preview 文件预览"
-			},
-			{
-				"path": "/oss-upload",
-				"title": "oss-upload 文件上传"
-			},
-			{
-				"path": "/login",
-				"title": "login 统一登入"
+				"path": "/table",
+				"title": "Table 多功能"
 			}
 		]
 	}

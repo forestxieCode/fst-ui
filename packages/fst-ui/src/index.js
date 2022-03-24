@@ -1,7 +1,8 @@
 import { version } from '../package.json'
-import CwSearchTab from './components/search-tab'
-import CwSearchTabGroup from './components/search-tab-group'
-const components = [CwSearchTab, CwSearchTabGroup]
+import FstSearchTab from './components/search-tab'
+import FstSearchTabGroup from './components/search-tab-group'
+import FstTable from './components/table'
+const components = [FstSearchTab, FstSearchTabGroup, FstTable]
 
 const install = (Vue) => {
   components.forEach((component) => {
@@ -19,6 +20,6 @@ const fstUi = {
   install
 }
 
-export { version, CwSearchTab, CwSearchTabGroup, install }
+export { version, FstSearchTab, FstSearchTabGroup, FstTable, install }
 
 export default fstUi
