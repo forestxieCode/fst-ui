@@ -1,19 +1,20 @@
 <p align="center">
-  <img src="http://www.cunw.com.cn/template/xinyun/skin/images/logo_03.png">
+  <a href="https://forestxiecode.github.io/fst-ui/#/">
+    <img src="https://i.postimg.cc/Gh5pLZ3G/logo-03.png">
+  </a>
 </p>
 
 <p align="center">
   <a>
-    <img src="https://travis-ci.org/ElemeFE/element.svg?branch=master">
+    <img src="https://app.travis-ci.com/forestxieCode/fst-ui.svg?branch=main">
   </a>
 </p>
-
 > A Vue.js 2.0 UI Toolkit for Web.
 
 fst-ui will stay with Vue 2.x 
 
 ## Links
--  [文档地址](http://114.116.142.157:8989/#/)
+-  [文档地址](https://forestxiecode.github.io/fst-ui/)
 
 ## Install
 ```shell
@@ -33,15 +34,15 @@ Vue.use(Fst)
 
 // or
 import { 
-  CwSearchTab, 
-  CwSearchTabGroup 
+  FstSearchTab, 
+  FstSearchTabGroup 
 } from 'fst-ui';
 
-Vue.component(CwSearchTab.name, CwSearchTab)
-Vue.component(CwSearchTabGroup.name, CwSearchTabGroup)
+Vue.component(FstSearchTab.name, FstSearchTab)
+Vue.component(FstSearchTabGroup.name, FstSearchTabGroup)
 ```
 For more information, please refer to [Quick Start](http://114.116.142.157:8989/#/component/quickstart) in our documentation.
 
 ## Browser Support
-Modern browsers and Internet Explorer 10+.
+Modern browsers and Internet Explorer 10+
 
