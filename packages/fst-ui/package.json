@@ -1,6 +1,6 @@
 {
   "name": "fst-ui",
-  "version": "1.0.6",
+  "version": "0.0.1",
   "description": "企业组件库",
   "author": "1397798719@qq.com",
   "license": "ISC",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/forestxieCode/fst-ui"
   },
   "scripts": {
     "test": "jest --config jest.conf.js",

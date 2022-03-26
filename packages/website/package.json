@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -28,7 +28,7 @@
     "core-js": "^3.6.5",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
-    "fst-ui": "1.0.6",
+    "fst-ui": "0.0.1",
     "element-ui": "^2.15.2",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
