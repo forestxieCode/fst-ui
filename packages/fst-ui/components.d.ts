@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     SearchTab: typeof import('./src/components/search-tab/SearchTab.vue')['default']
     SearchTabGroup: typeof import('./src/components/search-tab-group/SearchTabGroup.vue')['default']
+    TreeSelect: typeof import('./src/components/tree-select/TreeSelect.vue')['default']
   }
 }
 
