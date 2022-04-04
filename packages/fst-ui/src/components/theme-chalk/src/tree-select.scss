@@ -1,0 +1,41 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(tree-select) {
+  .select-option {
+    display: none !important;
+  }
+
+  [aria-disabled='true'] > .el-tree-node__content {
+      color: inherit !important;
+      background: transparent !important;
+      cursor: no-drop !important;
+  }
+
+  .el-tree-select-popper {
+      max-height: 400px;
+      overflow: auto;
+  }
+  .el-tree-select-popper.disabled {
+      display: none !important;
+  }
+  .el-tree-select-popper .el-button--small {
+      width: 25px !important;
+      min-width: 25px !important;
+  }
+  .el-tree-select-popper[x-placement^='bottom'] {
+      margin-top: 5px;
+  }
+
+  .mb10 {
+      margin-bottom: 10px;
+  }
+
+  .no-data {
+      height: 32px;
+      line-height: 32px;
+      font-size: 14px;
+      color: #cccccc;
+      text-align: center;
+  }
+}

@@ -87,11 +87,11 @@ export default {
     setNav() {
       let nav = navConfig
       this.nav = [nav[0]]
-      nav[1].groups
-        .map((group) => group.list)
-        .forEach((list) => {
-          this.nav = this.nav.concat(list)
-        })
+      // nav[1].groups
+      //   .map((group) => group.list)
+      //   .forEach((list) => {
+      //     this.nav = this.nav.concat(list)
+      //   })
     },
 
     updateNav() {

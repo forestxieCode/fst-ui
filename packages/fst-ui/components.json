@@ -1,5 +1,6 @@
 {
   "search-tab": "./src/components/search-tab/index.js",
   "search-tab-group": "./src/components/search-tab-group/index.js",
-  "table": "./src/components/table/index.js"
+  "table": "./src/components/table/index.js",
+  "tree-select": "./src/components/tree-select/index.js"
 }

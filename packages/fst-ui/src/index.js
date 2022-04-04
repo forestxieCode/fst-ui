@@ -2,7 +2,8 @@ import { version } from '../package.json'
 import FstSearchTab from './components/search-tab'
 import FstSearchTabGroup from './components/search-tab-group'
 import FstTable from './components/table'
-const components = [FstSearchTab, FstSearchTabGroup, FstTable]
+import FstTreeSelect from './components/tree-select'
+const components = [FstSearchTab, FstSearchTabGroup, FstTable, FstTreeSelect]
 
 const install = (Vue) => {
   components.forEach((component) => {
@@ -20,6 +21,13 @@ const fstUi = {
   install
 }
 
-export { version, FstSearchTab, FstSearchTabGroup, FstTable, install }
+export {
+  version,
+  FstSearchTab,
+  FstSearchTabGroup,
+  FstTable,
+  FstTreeSelect,
+  install
+}
 
 export default fstUi

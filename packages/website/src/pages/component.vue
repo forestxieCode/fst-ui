@@ -51,7 +51,6 @@
 	}
 
 	.content {
-		padding-top: 50px;
 
 		> {
 			h3 {

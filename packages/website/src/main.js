@@ -21,7 +21,9 @@ import './assets/styles/common.scss'
 import './assets/styles/fonts/style.css'
 import icon from './icon.json'
 
-Vue.use(ElementUI)
+Vue.use(ElementUI, {
+	size: 'small'
+});
 Vue.use(FstUI)
 Vue.use(VueRouter)
 

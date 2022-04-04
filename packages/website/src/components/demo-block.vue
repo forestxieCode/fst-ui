@@ -257,7 +257,6 @@ export default {
 
   computed: {
     lang() {
-      console.log(12, this.$route.path.split('/')[1])
       return this.$route.path.split('/')[1]
     },
 
@@ -316,7 +315,6 @@ export default {
   },
 
   created() {
-    console.log('this.$slots', this.$slots)
     const highlight = this.$slots.highlight
     if (highlight && highlight[0]) {
       let code = ''

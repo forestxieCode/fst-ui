@@ -1,28 +1,32 @@
 [
-	{
-		"name": "开发指南",
-		"children": [
-			{
-				"path": "/installation",
-				"name": "安装"
-			},
-			{
-				"path": "/quickstart",
-				"name": "快速上手"
-			}
-		]
-	},
-	{
-		"name": "业务组件",
-		"children": [
-			{
-				"path": "/search-tab",
-				"title": "search-tab 搜索"
-			},
-			{
-				"path": "/table",
-				"title": "Table 多功能"
-			}
-		]
-	}
+  {
+    "name": "开发指南",
+    "children": [
+      {
+        "path": "/installation",
+        "name": "安装"
+      },
+      {
+        "path": "/quickstart",
+        "name": "快速上手"
+      }
+    ]
+  },
+  {
+    "name": "业务组件",
+    "children": [
+      {
+        "path": "/search-tab",
+        "title": "search-tab 搜索"
+      },
+      {
+        "path": "/table",
+        "title": "Table 多功能"
+      },
+      {
+        "path": "/tree-select",
+        "title": "tree-select"
+      }
+    ]
+  }
 ]

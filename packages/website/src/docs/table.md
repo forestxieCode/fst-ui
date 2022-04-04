@@ -593,8 +593,6 @@ export default {
     $_handleSave(row) {
       this.$refs.table.endEditRow(row.id, (valid, result, oldRow) => {
         if (valid) {
-          console.log('修改之后的数据', result)
-          console.log('原始数据', oldRow)
           const index = this.editIds.findIndex(item => item === row.id)
           this.editIds.splice(index, 1)
         } else {
