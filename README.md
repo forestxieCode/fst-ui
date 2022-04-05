@@ -5,6 +5,8 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/npm/v/fst-ui?style=flat-square" alt="version">
+  <img src="https://img.badgesize.io/https://unpkg.com/fst-ui/dist/fst-ui.umd.js?compression=gzip&label=gzip" alt="gzip" />
   <a>
     <img src="https://app.travis-ci.com/forestxieCode/fst-ui.svg?branch=main">
   </a>
