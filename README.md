@@ -44,7 +44,6 @@ import {
 Vue.component(FstSearchTab.name, FstSearchTab)
 Vue.component(FstSearchTabGroup.name, FstSearchTabGroup)
 ```
-For more information, please refer to [Quick Start](http://114.116.142.157:8989/#/component/quickstart) in our documentation.
 
 ## Browser Support
 Modern browsers and Internet Explorer 10+
