@@ -79,7 +79,7 @@ const runIfNotDry = isDryRun ? dryRun : run
       `refs/tags/v${targetVersion}`,
       '--no-verify'
     ])
-    await runIfNotDry('git', ['push', 'origin', 'master', '--no-verify'])
+    await runIfNotDry('git', ['push', 'origin', 'main', '--no-verify'])
 
     console.log()
     console.log(chalk.green(`Successfully published v${targetVersion}`))
